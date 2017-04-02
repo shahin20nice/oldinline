@@ -86,55 +86,55 @@ function Canswer(callback_query_id, text, show_alert)
 function settings(chat,value) 
 local hash = SUDO..'settings:'..chat..':'..value
   if value == 'file' then
-      text = 'فیلتر فایل'
+      text = '📙فیلترفایل📘'
    elseif value == 'keyboard' then
-    text = 'فیلتردرون خطی(کیبرد شیشه ای)'
+    text = '🎲فیلتراینلاین🎲'
   elseif value == 'link' then
-    text = 'قفل ارسال لینک(تبلیغات)'
+    text = '🔗قفل لینک🔗'
   elseif value == 'game' then
-    text = 'فیلتر انجام بازی های(inline)'
+    text = '🏄فیلتربازی🏄'
     elseif value == 'username' then
-    text = 'قفل ارسال یوزرنیم(@)'
+    text = '🆔قفل تگ🆔'
    elseif value == 'pin' then
-    text = 'قفل پین کردن(پیام)'
+    text = '🔱قفل سنجاق🔱'
     elseif value == 'photo' then
-    text = 'فیلتر تصاویر'
+    text = '🎆فیلترتصاویر🎆'
     elseif value == 'gif' then
-    text = 'فیلتر تصاویر متحرک'
+    text = '🎁قفل گیف🎁'
     elseif value == 'video' then
-    text = 'فیلتر ویدئو'
+    text = '📹فیلترویدیو📹'
     elseif value == 'audio' then
-    text = 'فیلتر صدا(audio-voice)'
+    text = '🎤فیلترویس🎤'
     elseif value == 'music' then
-    text = 'فیلتر آهنگ(MP3)'
+    text = '🎵فیلترآهنگ🎵'
     elseif value == 'text' then
-    text = 'فیلتر متن'
+    text = '📋فیلترمتن📋'
     elseif value == 'sticker' then
-    text = 'قفل ارسال برچسب'
+    text = '🎎قفل استیکر🎎'
     elseif value == 'contact' then
-    text = 'فیلتر مخاطبین'
+    text = '☎فیلترمخاطبین☎'
     elseif value == 'forward' then
-    text = 'فیلتر فوروارد'
+    text = '🚟قفل فوروارد🚟'
     elseif value == 'persian' then
-    text = 'فیلتر گفتمان(فارسی)'
+    text = '♋فیلترفارسی♋'
     elseif value == 'english' then
-    text = 'فیلتر گفتمان(انگلیسی)'
+    text = '🆎فیلترانگلیسی🆎'
     elseif value == 'bot' then
-    text = 'قفل ورود ربات(API)'
+    text = '🎭قفل ربات🎭'
     elseif value == 'tgservice' then
-    text = 'فیلتر پیغام ورود،خروج افراد'
+    text = '🎬قفل پیام ورود🎬'
 	elseif value == 'groupadds' then
-    text = 'تبلیغات'
+    text = '📺قفل تبلیغات📺'
     end
 		if not text then
 		return ''
 		end
 	if redis:get(hash) then
   redis:del(hash)
-return text..'  غیرفعال شد.'
+return text..' 🔓غیرفعال شد🔓.'
 		else 
 		redis:set(hash,true)
-return text..'  فعال شد.'
+return text..' 🔒فعال شد🔒.'
 end
     end
 function fwd(chat_id, from_chat_id, message_id)
